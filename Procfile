@@ -1,1 +1,1 @@
-web: gunicorn study_log.app
+web: gunicorn study_log.wsgi
