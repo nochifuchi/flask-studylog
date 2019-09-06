@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- top-visual -->
+<div id="top-visual">
+  <div class="container">
+    <div class="inner">
+      <h2>学習を記録しよう</h2>
+      <div class="register"><a class="btn" href="{{ url_for('register') }}">ログ登録</a></div>
+    </div>
+  </div>
+</div>
+<!-- /top-visual -->
+
+<div class="container">
+
+  <!-- sec-lists -->
+  <section id="sec-lists" class="section">
+    <ul class="log-lists">
+      {% for log in logs %}
+      <li>
+        <div class="list-header">
+          <div class="date">{{ log.date }} のログ</div>
+          <div class="time"><span>{{ log.time }}</span>h</div>
+        </div>
+        <div class="list-detail">
+          <div class="memo">
+            <div class="title">作業メモ</div>
+            <div class="content">{{ log.memo }}</div>
+          </div>
+          {% if log.todo %}
+          <div class="todo">
+            <div class="title">TODO</div>
+            <div class="content">{{ log.todo }}</div>
+          </div>
+          {% endif %}
+          <!-- <div class="created">{{ log.created_at }}</div> -->
+          <div class="detail-link"><a class="btn btn-primary" href="{{ url_for('detail', id=log.id) }}">詳細</a></div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- /sec-lists -->
+
+</div>
+
+{% endblock %}

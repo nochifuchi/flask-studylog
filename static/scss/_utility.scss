@@ -1,0 +1,59 @@
+/*----------------------------
+  form
+-----------------------------*/
+.form-error {
+  color: $red;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.errorlist {
+  margin-top: 10px;
+  color: $red;
+  font-weight: bold;
+  li + li {
+    margin-top: 5px;
+  }
+}
+
+form > .form-group {
+  & + .form-group {
+    margin-top: 20px;
+  }
+}
+.form-group ::placeholder {
+  color: lighten($default-color, 30%);
+}
+.form-group textarea {
+  height: 150px;
+}
+.form-control-label {
+  font-size: 15px;
+}
+
+/*----------------------------
+  breadcrumb
+-----------------------------*/
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #fafafa;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb li {
+  & + li {
+    margin-left: 5px;
+   &::before {
+     padding: 0 5px;
+     color: $default-color;
+     content: "/\00a0";
+   }
+  }
+}
+.breadcrumb a {
+  color: $blue;
+}

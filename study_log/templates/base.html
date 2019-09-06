@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Log | 学習を記録サービス</title>
+<!-- Bootstrap -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+<!-- adobe font -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'dje8mib',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- header -->
+    <header>
+      <div class="container">
+        <h1 class="logo"><a href="{{ url_for('index') }}">StudyLog</a></h1>
+        <div class="header-register"><a class="btn btn-primary" href="{{ url_for('register') }}">ログ登録</a></div>
+      </div>
+    </header>
+    <!-- /header -->
+
+    <div id="contents">
+      {% block content %}{% endblock %}
+    </div>
+
+  </div>
+  <!-- js -->
+  <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>

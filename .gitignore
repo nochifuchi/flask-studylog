@@ -1,0 +1,9 @@
+.vscode
+.history
+.DS_Store
+node_modules
+package-lock.json
+package.json
+gulpfile.js
+Pipfile
+Pipfile.lock

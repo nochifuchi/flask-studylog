@@ -1,0 +1,355 @@
+@charset "UTF-8";
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0
+build: 1549
+*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input, textarea, select {
+  *font-size: 100%;
+}
+
+input, textarea, select, button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+legend {
+  color: #000;
+}
+
+/*----------------------------
+  form
+-----------------------------*/
+.form-error {
+  color: #e7001c;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.errorlist {
+  margin-top: 10px;
+  color: #e7001c;
+  font-weight: bold;
+}
+
+.errorlist li + li {
+  margin-top: 5px;
+}
+
+form > .form-group + .form-group {
+  margin-top: 20px;
+}
+
+.form-group ::placeholder {
+  color: #b3b3b3;
+}
+
+.form-group textarea {
+  height: 150px;
+}
+
+.form-control-label {
+  font-size: 15px;
+}
+
+/*----------------------------
+  breadcrumb
+-----------------------------*/
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #fafafa;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb li + li {
+  margin-left: 5px;
+}
+
+.breadcrumb li + li::before {
+  padding: 0 5px;
+  color: #666;
+  content: "/\00a0";
+}
+
+.breadcrumb a {
+  color: #007bff;
+}
+
+html, body {
+  width: 100%;
+  font-size: 13px;
+  /* base size */
+  line-height: 1.4;
+  font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W6", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
+  /* base font-family */
+  color: #666;
+  /* base color */
+  font-weight: normal;
+  line-break: strict;
+  word-break: break-strict;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+}
+
+#app {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #fafafa;
+  padding-bottom: 100px;
+}
+
+a {
+  color: #666;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h1 a {
+  color: #fff;
+}
+
+h1 a:hover {
+  color: #fff;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  color: #fff;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+/*----------------------------
+  header
+-----------------------------*/
+header {
+  padding: 8px 0;
+  background: #cccccc;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*----------------------------
+  top-visual
+-----------------------------*/
+#top-visual {
+  position: relative;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  height: 400px;
+  background: linear-gradient(135deg, #2980B9, #6DD5FA);
+  margin-bottom: 30px;
+}
+
+#top-visual .inner {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register {
+  margin-top: 20px;
+}
+
+.register a {
+  width: 200px;
+  background: #fafafa;
+  padding: 10px;
+}
+
+/*----------------------------
+  sec-lists
+-----------------------------*/
+#sec-lists {
+  margin-top: 40px;
+}
+
+.log-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.log-lists li {
+  width: calc(96%/3);
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.log-lists li:hover {
+  background: #fafafa;
+}
+
+.log-lists li:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.log-lists li > div {
+  margin-bottom: 10px;
+}
+
+.log-lists .list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.log-lists .list-header .date {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.log-lists .list-header .time {
+  font-size: 15px;
+  color: #e7001c;
+}
+
+.log-lists .list-header .time span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.list-detail {
+  padding: 0 10px 10px;
+}
+
+.list-detail > div {
+  margin-bottom: 15px;
+}
+
+.list-detail > div:last-child {
+  margin-bottom: 0;
+}
+
+.list-detail .title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*----------------------------
+  sec-detail
+-----------------------------*/
+.log-detail {
+  margin-bottom: 30px;
+}
+
+.log-detail ul li + li {
+  margin-top: 20px;
+}
+
+.log-detail .title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999999;
+}
+
+.log-edit a {
+  margin-right: 10px;
+}

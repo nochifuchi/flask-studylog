@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+  {% if id %}
+    <h3>ログ編集</h3>
+  {% else %}
+    <h3>ログ登録</h3>
+  {% endif %}
+
+  <!-- breadcrumb -->
+  <ol class="breadcrumb">
+    <li><a href="{{ url_for('index') }}">トップ</a></li>
+    {% if id %}
+      <li><a href="{{ url_for('detail', id=id) }}">ログ詳細</a></li>
+      <li class="active">ログ編集</li>
+    {% else %}
+      <li class="active">ログ登録</li>
+    {% endif %}
+  </ol>
+  <!-- /breadcrumb -->
+
+  <!-- sec-register -->
+  <section id="sec-register" class="section">
+    <div class="form-error">{{ error }}</div>
+    <form class="form-group" method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group date">
+        {{ form.date.label(class="form-control-label") }}
+        {{ form.date(class="form-control form-control-lg", placeholder="例：2019-01-01") }}
+      </div>
+      <div class="form-group time">
+        {{ form.time.label(class="form-control-label") }}
+        {{ form.time(class="form-control form-control-lg", placeholder="例：1") }}
+      </div>
+      <div class="form-group memo">
+        {{ form.memo.label(class="form-control-label") }}
+        {{ form.memo(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group todo">
+        {{ form.todo.label(class="form-control-label") }}
+        {{ form.todo(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group submit">
+        {{ form.submit(class="btn btn-primary btn-lg") }}
+      </div>
+    </form>
+  </section>
+  <!-- /sec-register -->
+
+</div>
+{% endblock %}
