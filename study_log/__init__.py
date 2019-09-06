@@ -12,11 +12,3 @@ def create_app():
 app = create_app()
 
 import study_log.views
-
-# from flask import Flask
-# from .config import Config
-
-# app = Flask(__name__)
-# app.config.from_object(Config)
-
-# from study_log import views
