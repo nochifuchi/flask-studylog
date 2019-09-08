@@ -1,19 +1,23 @@
 import os
 
-class DevelopmentConfig:
+# Flask
+DEBUG = False
 
-    # Flask
-    DEBUG = True
-    SECRET_KEY = '\x9b\xa2|\xcf\xd3\xee\xe1v| <`o\xfb_4\xc6\xda\x81\x02\xd3e\xf4\x16'
+# local_settings.pyファイルを読み込み
+try:
+    from .local_config import *
+except ImportError:
+    pass
 
-    # sqlalchemy
-    # SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}/heroku_27e2cd148cb227a?charset=utf8'.format(**{
-      'user': os.getenv('DB_USER', 'beab2a78d26a0a'),
-      'password': os.getenv('DB_PASSWORD', '4ed1bd4c'),
-      'host': os.getenv('DB_HOST', 'us-cdbr-iron-east-02.cleardb.net'),
+if not DEBUG:
+    # SECRET_KEY設定
+    SECRET_KEY = os.environ['SECRET_KEY']
+
+    # sqlalchemy設定
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}/' + os.environ['DB_NAME'] + '?charset=utf8'.format(**{
+        'user': os.getenv('DB_USER', os.environ['DB_USERNAME']),
+        'password': os.getenv('DB_PASSWORD', os.environ['DB_PASSWORD']),
+        'host': os.getenv('DB_HOST', os.environ['DB_HOSTNAME']),
     })
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
-
-Config = DevelopmentConfig

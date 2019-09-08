@@ -7,3 +7,4 @@ package.json
 gulpfile.js
 Pipfile
 Pipfile.lock
+local_config.py
