@@ -17,6 +17,7 @@ def register():
           log = Log(date=form.date.data, time=form.time.data, memo=form.memo.data, todo=form.todo.data)
           db.session.add(log)
           db.session.commit()
+          db.session.close()
           return redirect(url_for('index'))
       else:
         error = "エラーです"
