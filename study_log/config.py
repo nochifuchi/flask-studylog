@@ -3,7 +3,7 @@ import os
 # Flask
 DEBUG = False
 
-# local_settings.pyファイルを読み込み
+# local_config.pyファイルを読み込み
 try:
     from .local_config import *
 except ImportError:
