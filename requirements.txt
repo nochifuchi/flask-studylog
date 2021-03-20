@@ -6,7 +6,7 @@ flask-wtf==0.14.2
 flask==1.1.1
 gunicorn==19.9.0
 itsdangerous==1.1.0
-jinja2==2.10.1
+jinja2==2.11.3
 mako==1.1.0
 markupsafe==1.1.1
 numpy==1.17.1
